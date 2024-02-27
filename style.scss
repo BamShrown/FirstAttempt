@@ -1,0 +1,724 @@
+// Variables
+
+$category1Color: #a61e2f;
+$category2Color: #A5825A;
+$category3Color: #182852;
+$category4Color: #487A7C;
+$category5Color: #FFCE51;
+$category6Color: #DC8633;
+$category7Color: #d670bc;
+$category8Color: #3389DC;
+$category9Color: #7C4A48;
+$category10Color: #73BF82;
+
+#d670bc
+// Styling
+
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 10px;
+}
+
+label {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+button {
+    background: transparent;
+    border: 1px solid white;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.34);
+        transition: 0.2s;
+    }
+
+}
+
+form {
+    width: 100%;
+}
+
+.controls {
+    label {
+        color: black;
+    }
+}
+
+.container {
+    width: 100%;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#gridContainer {
+    width: 660px;
+    height: 100%;
+    position: relative;
+    margin-top: 180px;
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#tooltip {
+    width: 290px;
+    margin: 20px;
+    padding: 10px 15px;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    max-width: 400px;
+    color: white;
+}
+
+#tutorialPopup {
+    display: block;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 900px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+    z-index: 99999;
+    background-color: $category3Color;
+
+    p {
+        font-size: 14px;
+    }
+
+    .popupImg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .buttonDiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#enterName {
+    display: block;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+    z-index: 9999;
+    background-color: $category3Color;
+
+    h1 {
+        font-size: 14px;
+        color: $category3Color;
+    }
+}
+
+#mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tooltip {
+    display: none;
+}
+
+.gridCenterCircle {
+    position: absolute;
+    width: 262.7%;
+    /* height: 460px; */
+    margin: auto;
+    top: -22.7%;
+    left: -81.4%;
+    pointer-events: none;
+}
+
+.inputDescription {
+        font-size: 12px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+#printDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 50px;
+
+
+    button {
+        background-color: black;
+        border: 1px solid black;
+        color: white;
+        width: 125px;
+        padding: 8px 10px;
+        margin-top: 10px;
+        border-radius: 50px;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+#mySalesWheel {
+    color: $category3Color;
+
+    h1 {
+        color: $category3Color;
+    }
+}
+
+#careerWheelsKey {
+    display: flex;
+    width: 1000px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.careerKey1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        color: $category3Color;
+    }
+}
+
+.careerKey2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        color: $category3Color;
+    }
+}
+
+.careerKey3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        color: $category3Color;
+    }
+}
+
+input[type="number"] {
+    margin: 0 10px;
+}
+
+#categoriesKey {
+    // display: flex;
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .categoriesKeys {
+        width: 200px;
+        height: 50px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+    }
+}
+
+#gridContainer {
+
+    .rim2 {
+        fill: #e6e6e6;
+        stroke: #e6e6e6;
+    }
+
+    .rim3 {
+        fill: #e6e6e6;
+        stroke: #e6e6e6;
+    }
+
+    .rim4 {
+        fill: #e6e6e6;
+        stroke: #e6e6e6;
+    }
+
+    .rim2:hover  {
+        cursor: pointer;
+        fill: #cfcfcf;
+        
+    }
+
+    .rim3:hover  {
+        cursor: pointer;
+        fill: #cfcfcf;
+        
+    }
+
+    .rim4:hover  {
+        cursor: pointer;
+        fill: #cfcfcf;
+        
+    }
+
+
+}
+
+@media print {
+    /* All your print styles go here */
+
+    #printDiv {
+        display: none;
+    }
+    #gridContainer {
+        /* All your print styles go here */
+        margin-top: 250px;
+        margin-bottom: 170px;
+        width: 600px!important;
+    }
+
+    .infoPopup {
+        width: 250px!important;
+    }
+
+
+  }
+
+  .rim1 {
+    fill: white!important;
+    background-color: white!important;
+  }
+
+.categoryOption1 {
+    fill: $category1Color;
+    stroke: -1px;
+    background-color: $category1Color;
+}
+
+.categoryOption2 {
+    fill: $category2Color;
+    stroke: -1px;
+    background-color: $category2Color;
+}
+
+.categoryOption3 {
+    fill: $category3Color;
+    stroke: -1px;
+    background-color: $category3Color;
+}
+
+.categoryOption4 {
+    fill: $category4Color;
+    stroke: -1px;
+    background-color: $category4Color;
+}
+
+.categoryOption5 {
+    fill: $category5Color;
+    stroke: -1px;
+    background-color: $category5Color;
+}
+
+.categoryOption6 {
+    fill: $category6Color;
+    stroke: -1px;
+    background-color: $category6Color;
+}
+
+
+.categoryOption7 {
+    fill: $category7Color;
+    stroke: -1px;
+    background-color: $category7Color;
+}
+
+
+.categoryOption8 {
+    fill: $category8Color;
+    stroke: -1px;
+    background-color: $category8Color;
+}
+
+.categoryOption9 {
+    fill: $category9Color;
+    stroke: -1px;
+    background-color: $category9Color;
+}
+
+.categoryOption10 {
+    fill: $category10Color;
+    stroke: -1px;
+    background-color: $category10Color;
+}
+
+
+.selected {
+    fill: #cfcfcf!important;
+}
+
+$category-colors: (
+  1: $category1Color,
+  2: $category2Color,
+  3: $category3Color,
+  4: $category4Color,
+  5: $category5Color,
+  6: $category6Color,
+  7: $category7Color,
+  8: $category8Color,
+  9: $category9Color,
+  10: $category10Color
+  
+);
+
+@function get-color($index) {
+    // Calculate the actual key by modulo operation to cycle through the map keys
+    $actualKey: $index % length($category-colors);
+    // If actualKey is 0, use the last color
+    $actualKey: if($actualKey == 0, length($category-colors), $actualKey);
+    // Return the color
+    @return map-get($category-colors, $actualKey);
+  }
+  
+  // Loop for 'chosen' variants
+  @for $j from 1 through 120 { // Assuming you want 2 'chosen' variants
+    // Loop through each category option, up to 1000
+    @for $i from 1 through 120 {
+      .chosen#{$j}.categoryOption#{$i} {
+        // Use the get-color function to cycle through colors
+        $color: get-color($i);
+        fill: $color !important;
+        background-color: $color;
+      }
+    }
+  }
+
+.controls {
+    height: 50px;
+    margin-bottom: 200px;
+}
+
+#podSection {
+    padding: 40px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+// Circle Images
+
+.lowCircle{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(90deg, white 50%, transparent 50%),
+        linear-gradient(00deg, white 50%, transparent 50%);
+     
+}
+.lowCircleKey{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid $category3Color;
+    background-color: $category3Color;
+    background-image:
+        linear-gradient(90deg, white 50%, transparent 50%),
+        linear-gradient(00deg, white 50%, transparent 50%);
+     
+}
+.midCircle{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(90deg, white 50%, transparent 50%),
+        linear-gradient(90deg, white 50%, transparent 50%);
+}
+.midCircleKey{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid $category3Color;
+    background-color: $category3Color;
+    background-image:
+        linear-gradient(90deg, white 50%, transparent 50%),
+        linear-gradient(90deg, white 50%, transparent 50%);
+}
+.highCircleKey{
+    height: 28px;
+     width: 28px;
+     min-height: 28px;
+     min-width: 28px;
+     margin-right: 10px;          
+     display: inline-block;
+     border-radius: 50%;
+     border: 1px solid $category3Color;
+     background-color: transparent;
+     background-image:
+         linear-gradient(-90deg, $category3Color 50%, transparent 50%),
+         linear-gradient(180deg, white 50%, $category3Color 50%);
+ }
+.highCircle1{
+   height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category1Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle2{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category2Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle3{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category3Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle4{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category4Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle5{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category5Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle6{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category6Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle7{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category7Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle8{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category8Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle9{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category9Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+.highCircle10{
+    height: 28px;
+    width: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    margin-right: 10px;          
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    background-image:
+        linear-gradient(-90deg, $category10Color 50%, transparent 50%),
+        linear-gradient(180deg, white 50%, transparent 50%);
+}
+
+.textDiv {
+    width: 100%;
+    text-align: left;
+}
+
+input {
+    border: none;
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.jobTitleP, .companyP {
+    font-weight: 400;
+}
+
+.labelButtons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+// Delete icon
+
+.deleteIcon {
+    height: 25px;
+    width: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    font-size: 20px;
+    background-color: transparent;
+    background-image: linear-gradient(45deg,transparent 48%, white 49%, white 51%,transparent 50%), linear-gradient(-45deg,transparent 48%, white 49%, white 51%,transparent 50%);
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.526);
+        transition: 0.2s;
+    }
+}
+
+.hide {
+    display: none!important;
+}
